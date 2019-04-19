@@ -4,15 +4,45 @@
     margin: 0;
     padding: 0;
 }
+header h1{
+    /* h tags are all inherently block meaning they take up the entire width of whatever they're inside 
+    so I change it here so that it is only as big as its contents */
+    display: inline-block;
+    /* I used margin to center it 
+    I didn't use 50% just because it didn't look quite right*/
+    margin: 0 42%;
+
+}
+
 /* put stuff in a row using flex box */
-#main{
+#main{ 
     display: flex;
     flex-direction: row;
-    /* this makes the cards go in multiple rows if needed */
-    flex-wrap: wrap;
-}
+    /* this makes the cards go in multiple rows if needed
+    /* flex-wrap: wrap; */
+ }
 
 .cards img{
     width: 500px;
     height: 300px;
+    /* alternative way to make it 100% wide and height */
+    /* width: 100vw;
+    height: 100vh; */
 }
+
+#nav{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around; 
+}
+
+
+@media only screen and (max-width: 600px) {
+    #nav{
+        flex-direction: column;
+    }
+    #main{
+        flex-direction: column;
+    }
+  }
